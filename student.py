@@ -59,7 +59,7 @@ class Piggy(PiggyParent):
 
   def vanek(self):
     print("This is for testing")
-    print("Another line")
+    
 
   def dance(self):
     """A higher-ordered algorithm to make your robot dance"""
