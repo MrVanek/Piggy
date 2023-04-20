@@ -58,7 +58,11 @@ class Piggy(PiggyParent):
     '''
 
   def vanek(self):
-    self.right(primary=50, counter=50)
+    self.fwd()
+    time.sleep(2)
+    self.stop()
+    
+    self.right()
     time.sleep(2)
     self.stop()
 
