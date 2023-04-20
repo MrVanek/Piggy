@@ -58,9 +58,9 @@ class Piggy(PiggyParent):
     '''
 
   def vanek(self):
-    print("This is for testing")
-    print("Here is a second line")
-    print("Third line")
+    self.right(primary=50, counter=50)
+    time.sleep(2)
+    self.stop()
 
   def dance(self):
     """A higher-ordered algorithm to make your robot dance"""
