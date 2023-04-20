@@ -59,6 +59,7 @@ class Piggy(PiggyParent):
 
   def vanek(self):
     print("This is for testing")
+    print("Here is a second line")
     
 
   def dance(self):
