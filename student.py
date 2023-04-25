@@ -16,7 +16,7 @@ class Piggy(PiggyParent):
     ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-    self.LEFT_DEFAULT = 80
+    self.LEFT_DEFAULT = 78
     self.RIGHT_DEFAULT = 80
     self.MIDPOINT = 1450  # what servo command (1000-2000) is straight forward for your bot?
     self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
@@ -58,13 +58,17 @@ class Piggy(PiggyParent):
     '''
 
   def vanek(self):
-    self.fwd()
-    time.sleep(2)
+    self.turn_by_deg(90)
     self.stop()
-    
-    self.right()
-    time.sleep(2)
-    self.stop()
+    time.sleep(10)
+    for x in range(4):
+      self.fwd()
+      time.sleep(2)
+      self.stop()
+      
+      self.right()
+      time.sleep(2)
+      self.stop()
 
   def dance(self):
     """A higher-ordered algorithm to make your robot dance"""
