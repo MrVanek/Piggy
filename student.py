@@ -61,7 +61,7 @@ class Piggy(PiggyParent):
     start_heading = self.get_heading()
     while time.time() < start_time + amount:
       turn = self.get_heading() - start_heading
-      self.fwd(left = 50+turn, right = 50 - turn)
+      self.fwd(left = 50 - turn, right = 50 + turn)
     self.stop()
     pass
     
