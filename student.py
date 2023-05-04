@@ -57,17 +57,29 @@ class Piggy(PiggyParent):
     ****************
     '''
   def g_fwd(self, amount):
+    
     start_time = time.time()
     start_heading = self.get_heading()
     while time.time() < start_time + amount:
       turn = self.get_heading() - start_heading
       self.fwd(left = 50 - turn, right = 50 + turn)
     self.stop()
-    pass
+  
     
   def vanek(self):
-    self.g_fwd(3)
-    
+    self.servo(1000)
+    time.sleep(2)
+    self.servo(self.MIDPOINT)
+    time.sleep(2)
+    self.servo(1000)
+    time.sleep(2)
+    self.fwd()
+    time.sleep(2)
+    '''
+    while self.read_distanc)e() < 100:
+      turn = self.get_heading() - start_heading
+      self.fwd(left = 50 - turn, right = 50 + turn
+    '''
   def dance(self):
     """A higher-ordered algorithm to make your robot dance"""
     # TODO: check to see if it's safe before dancing
