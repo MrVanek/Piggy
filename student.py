@@ -75,6 +75,7 @@ class Piggy(PiggyParent):
     time.sleep(2)
     self.fwd()
     time.sleep(2)
+    self.stop()
     '''
     while self.read_distanc)e() < 100:
       turn = self.get_heading() - start_heading
