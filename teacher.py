@@ -112,7 +112,10 @@ class PiggyParent(gopigo3.GoPiGo3):
   def turn_to_deg(self, deg):
     """Turns to a degree relative to the gyroscope's readings. If told 20, it
         will rotate until the gyroscope reads 20."""
-
+    # setup variables
+    min_turn_rate = 30
+    max_turn_rate = 70
+    
     # error check
     goal = abs(deg) % 360
     current = self.get_heading()
@@ -125,8 +128,10 @@ class PiggyParent(gopigo3.GoPiGo3):
     # while loop - keep turning until my gyro says I'm there
     while abs(deg - self.get_heading()) > 4:
       turn_rate = abs(goal - self.get_heading())
-      if turn_rate > 20:
-        turn_rate = 20
+      if turn_rate < min_turn_rate:
+        turn_rate = min_turn_rate
+      elif turn_rate > max_turn_rate:
+        turn_rate = max_turn_rate
       turn(primary=turn_rate, counter=-turn_rate)
       #time.sleep(.05) # avoid spamming the gyro
 
