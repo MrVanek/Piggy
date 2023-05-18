@@ -56,26 +56,19 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
-  def g_fwd(self, amount):
-    
-    start_time = time.time()
+  def g_fwd(self, dist):
     start_heading = self.get_heading()
-    while time.time() < start_time + amount:
+    while self.read_distance() <  dist:
       turn = self.get_heading() - start_heading
       self.fwd(left = 50 - turn, right = 50 + turn)
     self.stop()
   
-    
+  def g_turn():
+    pass
+
+  
   def vanek(self):
-    self.servo(1000)
-    time.sleep(2)
-    self.servo(self.MIDPOINT)
-    time.sleep(2)
-    self.servo(2000)
-    time.sleep(2)
-    self.fwd()
-    time.sleep(2)
-    self.stop()
+    self.turn_by_angle(90)
     '''
     while self.read_distanc)e() < 100:
       turn = self.get_heading() - start_heading
