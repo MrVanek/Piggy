@@ -68,7 +68,7 @@ class Piggy(PiggyParent):
 
   
   def vanek(self):
-    self.turn_by_angle(90)
+    self.turn_by_deg(90)
     '''
     while self.read_distanc)e() < 100:
       turn = self.get_heading() - start_heading
